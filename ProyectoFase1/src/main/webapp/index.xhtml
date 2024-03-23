@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+
+<h:head>
+    <title>Productos en venta</title>
+</h:head>
+
+<h:body  style="background-image: url('https://i.pinimg.com/564x/cf/86/7e/cf867e72a3b866783bbe0c2af7020dc8.jpg');  background-attachment: fixed; display: flex; flex-direction: column; background-color: rgba(255, 255, 255, 0.5);  ">
+    <h:panelGroup layout="block" style="display: flex; ; justify-content: space-between; align-items: center; padding: 20px; font-family: Arial, sans-serif; ">
+        <h1 style="font-size: 20px; text-align: right; margin-right: 20px; font-family: Arial, sans-serif; color: #3C343FFF">Hermes´s library</h1>
+
+        <div style="text-align: center; margin-top: 25px;">
+            <ul style="background-color: rgba(255,255,255,0.8); list-style-type: none; padding: 8px 10px; color: #3c343f; border-radius: 20px; font-family: Arial, sans-serif; display: flex; justify-content: center; max-width: 800px; margin: 0 auto; margin-right: 60px;">
+                <li style="text-align: center; padding: 10px 16px;">
+                    <h:link value="Registrar producto" outcome="admin" style="color: #3c343f; font-size: 18px; text-decoration: none;"></h:link>
+                </li>
+                <li style="text-align: center; padding: 10px 16px;">
+                    <h:link value="Contactos" outcome="contactos" style="color: #3c343f; font-size: 18px; text-decoration: none;"></h:link>
+                </li>
+                <li style="text-align: center; padding: 10px 16px;">
+                    <h:link value="Login" outcome="login" style="color: #3c343f; font-size: 18px; text-decoration: none;"></h:link>
+                </li>
+                <li style="text-align: center; display: flex; align-items: center;">
+                    <h:commandLink value="Cerrar sesión" action="#{bean.logout}" style="text-decoration: none; color: #fff; padding: 5px 10px; border-radius: 10px; background-color: #9a8ba2; transition: background-color 0.3s ease;" />
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="container-icon" style="display: flex;">
+            <div class="container-cart-icon" style="position: relative;">
+                <img src="https://e7.pngegg.com/pngimages/833/426/png-clipart-black-shopping-cart-icon-for-free-black-shopping-cart.png" alt="carrito" class="icon-cart" style="width: 40px; height: 40px; border-radius: 30px" />
+                <div class="count-products" style="position: absolute; top: -10px; right: -10px; background-color: #3c343f; color: white; border-radius: 50%; padding: 5px 10px; font-size: 12px;">
+                    <span id="contador-productos">0</span>
+                </div>
+            </div>
+            <div class="container-cart-products hidden-cart" style="position: relative;">
+            </div>
+        </div>
+    </h:panelGroup>
+
+    <div class="row-container" style="display: flex; flex-wrap: wrap; margin-top: 100px;">
+        <div class="container-icon" style="flex: 1 0 calc(33.33% - 20px); margin-right: 20px; margin-bottom: 20px;">
+            <div class="item" style="display: flex; align-items: center; max-width: 400px; border: 1px solid #ccc; border-radius: 8px; border: none; padding: 10px;">
+                <h:form style="margin-right: 20px;">
+                    <img src="https://i.pinimg.com/564x/08/28/7b/08287b39e265ba70d5bab626a4cc241f.jpg" alt="Bubble Tea" style="width: 400px; height: 400px; border-radius: 20%; object-fit: cover;" />
+                </h:form>
+                <div class="info-product" style="margin-left: 20px;">
+                    <h2 style="margin-bottom: 10px; color: #3c343f">Rabbita!</h2>
+                    <p class="price" style="margin-bottom: 10px;">$4</p>
+                    <p class="info" style="margin-bottom: 10px;">Linda caja de lapiceras con estilos de Rabbita! en diferentes colores de tinta, aprovecha esa promoción. ¡ADQUIERO YA!</p>
+                    <h:commandButton value="Añadir al carrito" action="#{bean.addToCart}" style="margin-top: 10px; background-color: #615264FF; color: #FFFFFF; border: 1px solid #ccc; border-radius: 10px; padding: 8px 16px; cursor: pointer;" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-icon" style="flex: 1 0 calc(33.33% - 20px); margin-right: 20px; margin-bottom: 20px;">
+            <div class="item" style="display: flex; align-items: center; max-width: 400px; border: 1px solid #ccc; border-radius: 8px; border: none; padding: 10px;">
+                <h:form style="margin-right: 20px;">
+                    <img src="https://i.pinimg.com/564x/77/73/32/7773326d0f780208b45340e08b09e6a3.jpg" alt="Bubble Tea" style="width: 400px; height: 400px; border-radius: 20%; object-fit: cover;" />
+                </h:form>
+                <div class="info-product" style="margin-left: 20px;">
+                    <h2 style="margin-bottom: 10px; color: #3c343f">Strawberry sweet heart</h2>
+                    <p class="price" style="margin-bottom: 10px;">$4</p>
+                    <p class="info" style="margin-bottom: 10px;">Paquete de lapiceras, dos diferentes colores, tres tintas diferentes, ¡ADQUIERELO YA!</p>
+                    <h:commandButton value="Añadir al carrito" action="#{bean.addToCart}" style="margin-top: 10px; background-color: #615264FF; color: #FFFFFF; border: 1px solid #ccc; border-radius: 10px; padding: 8px 16px; cursor: pointer;" />
+                </div>
+            </div>
+        </div>
+
+        <div class="container-icon" style="flex: 1 0 calc(33.33% - 20px); margin-right: 20px; margin-bottom: 20px;">
+            <div class="item" style="display: flex; align-items: center; max-width: 400px; border: 1px solid #ccc; border-radius: 8px; border: none; padding: 10px;">
+                <h:form style="margin-right: 20px;">
+                    <img src="https://i.pinimg.com/564x/a5/b5/0f/a5b50f22ba6958960957025c3a762aa3.jpg" alt="Bubble Tea" style="width: 400px; height: 400px; border-radius: 20%; object-fit: cover;" />
+                </h:form>
+                <div class="info-product" style="margin-left: 20px;">
+                    <h2 style="margin-bottom: 10px; color: #3c343f">Sweet bear</h2>
+                    <p class="price" style="margin-bottom: 10px;">$4</p>
+                    <p class="info" style="margin-bottom: 10px;">Paquete de lapiceras con tres diferentes presentaciones y tres dieferentes tintas, ¡ADQUIERELO YA!</p>
+                    <h:commandButton value="Añadir al carrito" action="#{bean.addToCart}" style="margin-top: 10px; background-color: #615264FF; color: #FFFFFF; border: 1px solid #ccc; border-radius: 10px; padding: 8px 16px; cursor: pointer;" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row-container" style="display: flex; flex-wrap: wrap; margin-top: 20px;">
+        <div class="container-icon" style="flex: 1 0 calc(33.33% - 20px); margin-right: 20px; margin-bottom: 20px;">
+            <div class="item" style="display: flex; align-items: center; max-width: 400px; border: 1px solid #ccc; border-radius: 8px;  border: none; padding: 10px;">
+                <h:form style="margin-right: 20px;">
+                    <img src="https://i.pinimg.com/564x/c8/6a/37/c86a376d5a434c008c6fdf48216018ac.jpg" alt="Bubble Tea" style="width: 400px; height: 400px; border-radius: 20%; object-fit: cover;" />
+                </h:form>
+                <div class="info-product" style="margin-left: 20px;">
+                    <h2 style="margin-bottom: 10px; color: #3c343f">WORD BOOK</h2>
+                    <p class="price" style="margin-bottom: 10px;">$4</p>
+                    <p class="info" style="margin-bottom: 10px;">Lindas libretas tamaño medio con diferentes presentaciones de nuestro personajes ¡ADQUIERELO YA!</p>
+                    <h:commandButton value="Añadir al carrito" action="#{bean.addToCart}" style="margin-top: 10px; background-color: #615264FF; color: #FFFFFF; border: 1px solid #ccc; border-radius: 10px; padding: 8px 16px; cursor: pointer;" />
+                </div>
+            </div>
+        </div>
+
+        <div class="container-icon" style="flex: 1 0 calc(33.33% - 20px); margin-right: 20px; margin-bottom: 20px;">
+            <div class="item" style="display: flex; align-items: center; max-width: 400px; border: 1px solid #ccc; border-radius: 8px; border: none; padding: 10px;">
+                <h:form style="margin-right: 20px;">
+                    <img src="https://i.pinimg.com/564x/34/13/50/34135069ceb04ab3a6333d93fb8830f1.jpg" alt="Bubble Tea" style="width: 400px; height: 400px; border-radius: 20%; object-fit: cover;" />
+                </h:form>
+                <div class="info-product" style="margin-left: 20px;">
+                    <h2 style="margin-bottom: 10px; color: #3c343f">CHARMING CLUB</h2>
+                    <p class="price" style="margin-bottom: 10px;">$4</p>
+                    <p class="info" style="margin-bottom: 10px;">Libretas medianas con presentación de HELLO KITTY, juvenil para cualquiera que lo desee ¡ADQUIERELO YA!</p>
+                    <h:commandButton value="Añadir al carrito" action="#{bean.addToCart}" style="margin-top: 10px; background-color: #615264FF; color: #FFFFFF; border: 1px solid #ccc; border-radius: 10px; padding: 8px 16px; cursor: pointer;" />
+                </div>
+            </div>
+        </div>
+
+        <div class="container-icon" style="flex: 1 0 calc(33.33% - 20px); margin-right: 20px; margin-bottom: 20px;">
+            <div class="item" style="display: flex; align-items: center; max-width: 400px; border: 1px solid #ccc; border-radius: 8px; border: none; padding: 10px;">
+                <h:form style="margin-right: 20px;">
+                    <img src="https://i.pinimg.com/564x/07/be/e0/07bee02590cebe9f4c390f68c82080cc.jpg" alt="Bubble Tea" style="width: 400px; height: 400px; border-radius: 20%; object-fit: cover;" />
+                </h:form>
+                <div class="info-product" style="margin-left: 20px;">
+                    <h2 style="margin-bottom: 10px; color: #3c343f">Rilakumma book</h2>
+                    <p class="price" style="margin-bottom: 10px;">$4</p>
+                    <p class="info" style="margin-bottom: 10px;">Libretas de rilakumma listas para ser usadas, cuatro diferentes presentaciones ¡ADQUIERELO YA!</p>
+                    <h:commandButton value="Añadir al carrito" action="#{bean.addToCart}" style="margin-top: 10px; background-color: #615264FF; color: #FFFFFF; border: 1px solid #ccc; border-radius: 10px; padding: 8px 16px; cursor: pointer;" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" style="background-color: #615264; color: #ffffff; padding: 20px; text-align: center; width: 100%; position: fixed; bottom: 0; left: 0; font-family: Arial, sans-serif; font-size: 20px;">
+        ¡ADQUIERELO YA!
+    </div>
+</h:body>
+
+</html>
