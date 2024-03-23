@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Contactos</title>
+</h:head>
+
+<h:body  style="background-image: url('https://i.pinimg.com/564x/cf/86/7e/cf867e72a3b866783bbe0c2af7020dc8.jpg');  background-attachment: fixed; display: flex; flex-direction: column; background-color: rgba(255, 255, 255, 0.5);  ">
+    <h:panelGroup layout="block" style="display: flex; ; justify-content: space-between; align-items: center; padding: 20px; font-family: Arial, sans-serif; ">
+        <h1 style="font-size: 20px; text-align: right; margin-right: 20px; font-family: Arial, sans-serif; color: #3C343FFF">Hermes´s library</h1>
+
+
+        <div style="text-align: center; margin-top: 25px;">
+            <ul style="background-color: rgba(255,255,255,0.8); list-style-type: none; padding: 8px 10px; color: #3c343f; border-radius: 20px; font-family: Arial, sans-serif; display: flex; justify-content: center; max-width: 800px; margin: 0 auto; margin-right: 60px;">
+                <li style="text-align: center; padding: 10px 16px;">
+                    <h:link value="Inicio" outcome="index" style="color: #3c343f; font-size: 18px; text-decoration: none;"></h:link>
+                </li>
+                <li style="text-align: center; padding: 10px 16px;">
+                    <h:link value="Registrar producto" outcome="admin" style="color: #3c343f; font-size: 18px; text-decoration: none;"></h:link>
+                </li>
+                <li style="text-align: center; padding: 10px 16px;">
+                    <h:link value="Login" outcome="login" style="color: #3c343f; font-size: 18px; text-decoration: none;"></h:link>
+                </li>
+                <li style="text-align: center; display: flex; align-items: center;">
+                    <h:commandLink value="Cerrar sesión" action="#{bean.logout}" style="text-decoration: none; color: #fff; padding: 5px 10px; border-radius: 10px; background-color: #9a8ba2; transition: background-color 0.3s ease;" />
+                </li>
+            </ul>
+        </div>
+
+        <div class="container-icon" style="display: flex;">
+            <div  style="position: relative;">
+                <img src="https://i.pinimg.com/736x/63/16/14/631614071c7e4a3e3a09a1360cc7ee7d.jpg" alt="carrito" class="icon-cart" style="width: 60px; height: 60px; border-radius: 30px" />
+                <div class="count-products" style="position: absolute; top: -10px; right: -10px; background-color: #9a8ba2; color: white; border-radius: 50%; padding: 5px 10px; font-size: 12px;">
+                </div>
+            </div>
+
+        </div>
+    </h:panelGroup>
+
+
+
+    <div class="contact-list" style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 100px;">
+
+        <div class="contact-item" style="flex: 1; max-width: 200px; margin-right: 20px; margin-bottom: 20px; border: 1px solid rgba(204,204,204,0.72); border-radius: 8px; padding: 10px;">
+            <img src="https://i.pinimg.com/736x/63/16/14/631614071c7e4a3e3a09a1360cc7ee7d.jpg" alt="Nombre del Contacto" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;" />
+            <h3 style="margin-bottom: 5px;">Ashley Nicole Aguilar Ramírez</h3>
+            <p style="margin-bottom: 5px;">Cargo</p>
+            <p style="margin-bottom: 5px;">Email: pipio@example.com</p>
+            <p style="margin-bottom: 5px;">Teléfono: +123456789</p>
+        </div>
+
+        <div class="contact-item" style="flex: 1; max-width: 200px; margin-right: 20px; margin-bottom: 20px; border: 1px solid rgba(204,204,204,0.72); border-radius: 8px; padding: 10px;">
+            <img src="https://i.pinimg.com/736x/95/10/ab/9510aba0f5db25147b065e68472bae01.jpg" alt="Nombre del Contacto" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;" />
+            <h3 style="margin-bottom: 5px;">Francisco Ernesto Bayona Burgos</h3>
+            <p style="margin-bottom: 5px;">Cargo</p>
+            <p style="margin-bottom: 5px;">Email: fran@example.com</p>
+            <p style="margin-bottom: 5px;">Teléfono: +123456789</p>
+        </div>
+
+
+        <div class="contact-item" style="flex: 1; max-width: 200px; margin-right: 20px; margin-bottom: 20px; border: 1px solid rgba(204,204,204,0.72); border-radius: 8px; padding: 10px;">
+            <img src="https://i.pinimg.com/736x/ee/ac/36/eeac36e983b98513a07544a3c74b3713.jpg" alt="Nombre del Contacto" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;" />
+            <h3 style="margin-bottom: 5px;">Nancy Mariela Cabrera Rosales</h3>
+            <p style="margin-bottom: 5px;">Cargo</p>
+            <p style="margin-bottom: 5px;">Email: nacy@example.com</p>
+            <p style="margin-bottom: 5px;">Teléfono: +123456789</p>
+        </div>
+
+
+        <div class="contact-item" style="flex: 1; max-width: 200px; margin-right: 20px; margin-bottom: 20px; border: 1px solid rgba(204,204,204,0.72); border-radius: 8px; padding: 10px;">
+            <img src="https://i.pinimg.com/564x/6b/ac/0c/6bac0c560c0faa252770b4b8e5e34d66.jpg" alt="Nombre del Contacto" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;" />
+            <h3 style="margin-bottom: 5px;">Douglas Johan López Landaverde</h3>
+            <p style="margin-bottom: 5px;">Cargo</p>
+            <p style="margin-bottom: 5px;">Email: joha@example.com</p>
+            <p style="margin-bottom: 5px;">Teléfono: +123456789</p>
+        </div>
+
+        <div class="contact-item" style="flex: 1; max-width: 200px; margin-right: 20px; margin-bottom: 20px; border: 1px solid rgba(204,204,204,0.72); border-radius: 8px; padding: 10px;">
+            <img src="https://i.pinimg.com/564x/fa/66/67/fa66677f0b14e1f41efd63cd3f695f30.jpg" alt="Nombre del Contacto" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;" />
+            <h3 style="margin-bottom: 5px;">David Eduardo Rodríguez Vigil</h3>
+            <p style="margin-bottom: 5px;">Cargo</p>
+            <p style="margin-bottom: 5px;">Email: edua@example.com</p>
+            <p style="margin-bottom: 5px;">Teléfono: +123456789</p>
+        </div>
+
+    </div>
+    <div id="footer" style="background-color: #3c343f; color: #ffffff; padding: 20px; text-align: center; width: 100%; position: fixed; bottom: 0; left: 0; font-family: Arial, sans-serif; font-size: 20px;">
+        Trabajo colaborativo
+    </div>
+</h:body>
+
+</html>

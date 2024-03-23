@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+
+<h:head>
+    <title>Registro de productos</title>
+    <h:outputStylesheet name="css/bootstrap.min.css" />
+    <h:outputStylesheet name="css/alertify.core.css" />
+    <h:outputStylesheet name="css/alertify.default.css" />
+    <h:outputScript name="js/alertify.js"/>
+</h:head>
+<h:body  style="background-image: url('https://i.pinimg.com/564x/cf/86/7e/cf867e72a3b866783bbe0c2af7020dc8.jpg');  background-attachment: fixed; display: flex; flex-direction: column; background-color: rgba(255, 255, 255, 0.5);  ">
+    <h:panelGroup layout="block" style="display: flex; ; justify-content: space-between; align-items: center; padding: 20px; font-family: Arial, sans-serif; ">
+        <h1 style="font-size: 20px; text-align: right; margin-right: 20px; font-family: Arial, sans-serif; color: #3C343FFF">Hermes´s library</h1>
+
+
+        <div style="text-align: center; margin-top: 25px;">
+            <ul style="background-color: rgba(255,255,255,0.8); list-style-type: none; padding: 8px 10px; color: #3c343f; border-radius: 20px; font-family: Arial, sans-serif; display: flex; justify-content: center; max-width: 800px; margin: 0 auto; margin-right: 60px;">
+                <li style="text-align: center; padding: 10px 16px;">
+                    <h:link value="Inicio" outcome="index" style="color: #3c343f; font-size: 18px; text-decoration: none;"></h:link>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container-icon" style="display: flex;">
+            <div  style="position: relative;">
+                <img src="https://i.pinimg.com/736x/63/16/14/631614071c7e4a3e3a09a1360cc7ee7d.jpg" alt="carrito" class="icon-cart" style="width: 60px; height: 60px; border-radius: 30px" />
+                <div class="count-products" style="position: absolute; top: -10px; right: -10px; background-color: #9a8ba2; color: white; border-radius: 50%; padding: 5px 10px; font-size: 12px;">
+                </div>
+            </div>
+
+        </div>
+    </h:panelGroup>
+
+
+    <div class="container" style="margin-top: 40px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 style=" text-align: center; color: #3c343f; ">Registro de Productos</h2>
+                <h:form id="miFormulario" style="margin-top: 50px; background-color: rgba(255,255,255,0.47); border-radius: 10px; width: 100%; height: 280px;">                    <h:panelGroup layout="block" styleClass="alert alert-danger"
+                                                                                                                                                                                                 rendered="#{not empty facesContext.messageList}">
+                    <h:messages />
+                </h:panelGroup>
+                    <h:panelGrid columns="4" styleClass="table">
+                        <h:outputLabel for="codigo" value="Código:"/>
+                        <h:inputText id="codigo" styleClass="form-control"
+                                     value="#{productoBean.producto.codigo}"
+                                     required="true"
+                                     requiredMessage="Debes ingresar el código"
+                                     validatorMessage="Código no valido">
+                            <f:validateRegex pattern="[A-Z]{2}[0-9]{6}"/>
+                        </h:inputText>
+                        <h:outputLabel for="producto" value="Producto:"/>
+                        <h:inputText id="producto" styleClass="form-control"
+                                     value="#{productoBean.producto.productos}"
+                                     required="true"
+                                     requiredMessage="Debes ingresar el nombre del producto"/>
+                        <h:outputLabel for="descripcion" value="Descripción:"/>
+                        <h:inputText id="descripcion" styleClass="form-control"
+                                     value="#{productoBean.producto.descripcion}"
+                                     required="true" requiredMessage="Debes ingresar una breve descripción del producto"/>
+                        <h:outputLabel for="cantidad" value="Cantidad:"/>
+                        <h:inputText id="cantidad" value="#{productoBean.producto.cantidad}"
+                                     required="true" styleClass="form-control"
+                                     requiredMessage="Debes ingresar la catidad en existencia "
+                                     converterMessage="La cantidad debe ser númerica">
+                            <f:validateLongRange minimum="1"/>
+                        </h:inputText>
+                        <h:outputLabel for="precio" value="Precio:"/>
+                        <h:inputText id="precio" value="#{productoBean.producto.precio}"
+                                     required="true" styleClass="form-control"
+                                     requiredMessage="Debes ingresar el precio del producto"
+                                     validatorMessage="El precio debe ser igual o mayor a 1.0"
+                                     converterMessage="El cum debe ser numérico">
+                            <f:validateDoubleRange minimum="1.0" maximum="#{Double.MAX_VALUE}"/>
+                        </h:inputText>
+                        <h:outputLabel for="categoria" value="Categoría:"/>
+                        <h:selectOneMenu id="categoria" styleClass="form-control"
+                                         value="#{productoBean.producto.categoria}">
+                            <f:selectItem itemValue="Material de Escritura"/>
+                            <f:selectItem itemValue="Cuadernos y Blocs"/>
+                            <f:selectItem itemValue="Papel y Cartulina"/>
+                            <f:selectItem itemValue="Material de Oficina"/>
+                            <f:selectItem itemValue="Artículos de Manualidades"/>
+                            <f:selectItem itemValue="Material Escolar"/>
+                            <f:selectItem itemValue="Material de Presentación"/>
+                            <f:selectItem itemValue="Embalaje y Envío"/>
+                            <f:selectItem itemValue="Material de Arte"/>
+                            <f:selectItem itemValue="Accesorios de Escritorio"/>
+                        </h:selectOneMenu>
+                    </h:panelGrid>
+                    <div style="margin-top: 60px;">
+                        <h:commandButton value="Guardar" styleClass="btn btn-success"
+                                         action="#{productoBean.guardarProducto()}"
+                                         style="margin-right: 10px; background-color: #73647a; border-color: #73647a; color: #FFFFFF;" />
+                        <h:commandButton type="reset" value="Limpiar" styleClass="btn btn-danger"
+                                         style="background-color: #615264; border-color: #615264; color: #FFFFFF;" />
+                    </div>
+                </h:form>
+            </div>
+        </div>
+
+
+        <div class="row" style="margin-top: 40px;">
+            <h2 style=" text-align: center; color: #3c343f;">Lista de Productos</h2>
+            <h:form style="margin-top: 50px;">
+                <h:dataTable styleClass="table" value="#{estudianteBean.listaProductos}"
+                             var="est" rendered="#{productoBean.listaProductos.size()>0}">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel value="Código"/>
+                        </f:facet>
+                        <h:outputText value="#{est.codigo}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel value="Producto"/>
+                        </f:facet>
+                        <h:outputText value="#{est.productos}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel value="Descripción"/>
+                        </f:facet>
+                        <h:outputText value="#{est.descripcion}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel value="Categoría"/>
+                        </f:facet>
+                        <h:outputText value="#{est.categoria}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel value="Cantidad"/>
+                        </f:facet>
+                        <h:outputText value="#{est.catidad}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel value="Precio"/>
+                        </f:facet>
+                        <h:outputText value="#{est.precio}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel value="Operaciones"/>
+                        </f:facet>
+                        <h:commandButton value="Eliminar" styleClass="btn btn-danger"
+                                         action="#{productoBean.eliminarproducto}"
+                                         onclick="return confirmarEliminacion();">
+                            <f:param name="codigo" value="#{est.codigo}"/>
+                        </h:commandButton>
+                    </h:column>
+                </h:dataTable>
+
+
+            </h:form>
+        </div>
+    </div>
+    <h:outputScript>
+        <c:if test = "#{not empty flash.exito}" >
+            alertify.success('#{flash.exito}');
+        </c:if>
+        function confirmarEliminacion(){
+        return confirm("¿Está seguro que desea eliminar este producto");
+        }
+    </h:outputScript>}
+    <div id="footer" style="background-color: #3c343f; color: #ffffff; padding: 20px; text-align: center;  width: 100%; height: 60px; position: absolute; bottom: 0; left: 0; font-family: Arial, sans-serif; font-size: 15px;  ">
+        Trabaja esclavo
+    </div>
+</h:body>
+</html>

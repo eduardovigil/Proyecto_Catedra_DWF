@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+   <h:body  style="background-image: url('https://i.pinimg.com/564x/cf/86/7e/cf867e72a3b866783bbe0c2af7020dc8.jpg');  background-attachment: fixed; display: flex; flex-direction: column; background-color: none;  ">
+      <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+         <h:form style=" padding: 20px; border-radius: 10px; max-width: 400px;">
+            <div>
+               <h2 style=" text-align: center; color: #3c343f; font-size: 40px; margin-left: 100px">Login</h2>
+               <p></p>
+            </div>
+            <h:outputLabel for="nombreCompleto" value="Nombre completo:" style="display: block; margin-bottom: 5px; font-weight: bold; color: #3c343f; font-size: 25px;"  />
+            <h:inputText id="nombreCompleto" required="true" style="width: 500px; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;" />
+
+            <h:outputLabel for="nombreUsuario" value="Nombre de usuario:" style="display: block; margin-bottom: 5px; font-weight: bold; color: #3c343f;  font-size: 25px"  />
+            <h:inputText id="nombreUsuario" required="true" style="width: 500px; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;" />
+
+            <h:outputLabel for="email" value="Correo:" style="display: block; margin-bottom: 5px; font-weight: bold; color: #3c343f;  font-size: 25px"   />
+            <h:inputText id="email" required="true" style="width: 500px; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;" />
+
+            <h:outputLabel for="password" value="Contraseña:" style="display: block; margin-bottom: 5px; font-weight: bold; color: #3c343f;  font-size: 25px" />
+            <h:inputSecret id="password" required="true" style="width: 500px; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;" />
+
+            <h:commandButton value="Registrarse" style="background-color: #9a8ba2; color: white; padding: 14px 20px; margin: 8px 0; border: none; border-radius: 20px; cursor: pointer; width: 500px; font-size: 20px;" />
+
+            <div style="margin-top: 25px; margin-left: 15px;">
+               <ul style="font-family: Arial, sans-serif; list-style-type: none;">
+                  <li style="text-align: center; padding: 10px 16px; margin-left: 50px">
+                     <h:link value="   Regresar al inicio" outcome="index.xhtml" style="color: #3c343f; font-size: 18px; text-decoration: none;"></h:link>
+                  </li>
+               </ul>
+            </div>
+
+         </h:form>
+
+      </div>
+
+   </h:body>
+</f:view>
+</html>
